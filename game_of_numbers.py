@@ -10,4 +10,4 @@ while userGuess != number:
     elif userGuess < number:
         print("Число должно быть больше!")
     else:
-        print("красавчик")
+        print("Молодец!")
