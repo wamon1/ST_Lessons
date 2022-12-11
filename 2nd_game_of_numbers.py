@@ -2,15 +2,15 @@ import random
 
 def game(n, times):
     print("Угадай число от 1 до ",n," за ",times," попыток")
-    userGuess = random.randint(1, n)
+    user_guess = random.randint(1, n)
     b = -1
     popitka = 0
-    while userGuess != b:
+    while user_guess != b:
         b = int(input("Ваш вариант = "))
         popitka = popitka + 1
-        if b < userGuess:
+        if b < user_guess:
             print("Число должно быть больше!")
-        elif b > userGuess:
+        elif b > user_guess:
             print("Число должно быть меньше!")
         else:
             print("Угадали с ",popitka, " попытки")
