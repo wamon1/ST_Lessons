@@ -1,13 +1,19 @@
-import random
+from parent_game import Game
 
-number = random.randint(1, 10)
-userGuess = 1
+class GuessNumber(Game):
 
-while userGuess != number:
-    userGuess = int(input("Угадай число от 1 до 10: "))
-    if userGuess > number:
-        print("Число должно быть меньше!")
-    elif userGuess < number:
-        print("Число должно быть больше!")
-    else:
-        print("Молодец!")
+    def start_game(self):
+        self.guess_number = int(input("Введи число от 1 до 10\n"))
+        while True:
+            if int(self.guess_number) < self.random_value:
+                print(f'{self.guess_number} число меньше загаданного')
+                break
+            if int(self.guess_number) > self.random_value:
+                print(f'{self.guess_number} число больше загаданного')
+                break
+            if int(self.guess_number) == self.random_value:
+                print(f'число {self.guess_number} угадано с 100% точностью')
+            return
+        self.start_game()
+
+GuessNumber()
